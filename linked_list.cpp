@@ -10,8 +10,6 @@ int display();
 int InsertAtEnd();
 int InsertAtPosition();
 
-
-
 // Node Structure 
 struct node{
     int data;
