@@ -228,6 +228,7 @@ int DeleteAtEnd(){
     }
     return 0;
 }
+
 int DeleteAtPosition(){
     if(head == NULL){
         cout<<"Empty List"<<endl;
