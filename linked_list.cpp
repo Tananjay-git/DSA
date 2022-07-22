@@ -5,12 +5,13 @@ using namespace std;
 
 // Proto type 
 
-int InsertAtBeginning();
 int display();
+int InsertAtBeginning();
 int InsertAtEnd();
 int InsertAtPosition();
 int DeleteAtBeginning();
 int DeleteAtEnd();
+int DeleteAtPosition();
 
 // Node Structure 
 struct node{
@@ -25,9 +26,9 @@ struct node *head = NULL;
 
 int main(){
     int opt=0;
-    while(opt != 7){
+    while(opt != 8){
         cout<<"Enter your choice : "<<endl;
-        cout<<" 1 : Show \n 2 : Insert at Beginning \n 3 : Insert at Ending \n 4 : Insert at Position \n 5 : Delete at Beginning  \n 6 : int Delete at End\n 7 : Exit "<<endl;
+        cout<<" 1 : Show \n 2 : Insert at Beginning \n 3 : Insert at Ending \n 4 : Insert at Position \n 5 : Delete at Beginning  \n 6 : int Delete at End\n 7 : Delete at Position\n 8 : Exit "<<endl;
         cin>>opt;
 
         switch (opt)
@@ -63,6 +64,11 @@ int main(){
             break;
         }
         case 7:
+        {
+            DeleteAtPosition();
+            break;
+        }
+        case 8:
         {
             cout<<"Exiting";
             break;
@@ -222,7 +228,31 @@ int DeleteAtEnd(){
     }
     return 0;
 }
-
+int DeleteAtPosition(){
+    if(head == NULL){
+        cout<<"Empty List"<<endl;
+    }
+    else{
+        if(head->next == NULL){
+            head = NULL;
+        }
+        else{
+            int position;
+            struct node *temp1 = head, *temp2;
+            cout<<"Enter a Position : "<<endl;
+            cin>>position;
+            for (int i = 0; i < position-1; i++)
+            {
+                temp1 = temp1->next;
+            }
+            temp2 = temp1->next;
+            temp1->next = temp2->next;
+            free(temp2);
+        }
+        cout<<"Element is Deleted"<<endl;
+    }
+    return 0;
+}
 
 // Display 
 
