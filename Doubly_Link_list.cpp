@@ -93,6 +93,23 @@ int InsertAtBeginning(){
 }
 
 int InsertAtEnd(){
+    struct node *newnode = new node;
+    
+    if(newnode == NULL){
+        cout<<"No Space"<<endl;
+    }
+    else{
+        int value;
+        cout<<"Enter a value : ";
+        cin>>value;
+        newnode->data = value;
+
+        if(head == NULL){
+            newnode->previous = NULL;
+            newnode->next = NULL;
+            head = NULL;
+        }
+    }
 
     return 0;
 }
