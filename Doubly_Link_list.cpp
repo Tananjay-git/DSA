@@ -26,7 +26,7 @@ struct node *head = NULL;
 int main(){
     int opt = 0;
     while(opt != 8){
-        cout<<" 1 : Display \n 2 : Insert at Beginning \n 3 : Insert at End 8 : Exit"<<endl;
+        cout<<" 1 : Display \n 2 : Insert at Beginning \n 3 : Insert at End \n 8 : Exit"<<endl;
         cout<<"Enter your chooice : ";
         cin>> opt;
         
@@ -107,8 +107,18 @@ int InsertAtEnd(){
         if(head == NULL){
             newnode->previous = NULL;
             newnode->next = NULL;
-            head = NULL;
+            head = newnode;
         }
+        else{
+            struct node *temp = head;
+            while(temp->next != NULL){
+                temp = temp->next;
+            }
+            newnode->next = NULL;
+            temp->next = newnode;
+            newnode->previous = temp;
+        }
+        cout<<"Element inserted"<<endl;
     }
 
     return 0;
