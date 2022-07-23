@@ -5,8 +5,9 @@ using namespace std;
 
 // Proto type
 
-int InsertAtBeginning();
 int display();
+int InsertAtBeginning();
+int InsertAtEnd();
 
 
 
@@ -25,7 +26,7 @@ struct node *head = NULL;
 int main(){
     int opt = 0;
     while(opt != 8){
-        cout<<" 1 : Display \n 2 : Insert at Beginning \n 8 : Exit"<<endl;
+        cout<<" 1 : Display \n 2 : Insert at Beginning \n 3 : Insert at End 8 : Exit"<<endl;
         cout<<"Enter your chooice : ";
         cin>> opt;
         
@@ -40,6 +41,11 @@ int main(){
             {
                 InsertAtBeginning();
                 break;   
+            }
+            case 3:
+            {
+                InsertAtEnd();
+                break;
             }
             case 8:
             {
@@ -86,6 +92,10 @@ int InsertAtBeginning(){
     return 0;
 }
 
+int InsertAtEnd(){
+
+    return 0;
+}
 
 
 
