@@ -136,7 +136,7 @@ int InsertAtPosition(){
         cout<<"No Space "<<endl;
     }
     else{
-        int value,position;
+        int value,position,flag =1;
         cout<<"Enter a Value : ";
         cin>>value;
 
@@ -154,7 +154,21 @@ int InsertAtPosition(){
 
             for(int i =0; i<position-1; i++){
                 temp = temp->next;
+                if(temp->next == NULL){
+                    flag = 0;
+                    break;
+                }
             } 
+            if(flag){
+                newnode->next = temp->next;
+                temp->next->previous = newnode;
+                temp->next = newnode;
+                newnode->previous = temp;
+                cout<<"Element Inserted"<<endl;
+            }
+            else{
+                cout<<"Number of element is less than position entered"<<endl;
+            }
         }
     }
     return 0;
