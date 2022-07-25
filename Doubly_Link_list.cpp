@@ -8,6 +8,7 @@ using namespace std;
 int display();
 int InsertAtBeginning();
 int InsertAtEnd();
+int InsertAtPosition();
 
 
 
@@ -26,7 +27,7 @@ struct node *head = NULL;
 int main(){
     int opt = 0;
     while(opt != 8){
-        cout<<" 1 : Display \n 2 : Insert at Beginning \n 3 : Insert at End \n 8 : Exit"<<endl;
+        cout<<" 1 : Display \n 2 : Insert at Beginning \n 3 : Insert at End \n 4 : Insert at Position \n 8 : Exit"<<endl;
         cout<<"Enter your chooice : ";
         cin>> opt;
         
@@ -45,6 +46,11 @@ int main(){
             case 3:
             {
                 InsertAtEnd();
+                break;
+            }
+            case 4:
+            {
+                InsertAtPosition();
                 break;
             }
             case 8:
@@ -120,13 +126,44 @@ int InsertAtEnd(){
         }
         cout<<"Element inserted"<<endl;
     }
+    return 0;
+}
+
+int InsertAtPosition(){
+    struct node *newnode = new node;
+
+    if(newnode ==  NULL){
+        cout<<"No Space "<<endl;
+    }
+    else{
+        int value,position;
+        cout<<"Enter a Value : ";
+        cin>>value;
+
+        newnode->data = value;
+        
+        if(head == NULL){
+            newnode->next = NULL;
+            newnode->previous = NULL;
+            head = newnode;
+        }
+        else{
+            struct node *temp = head;
+            cout<<"Enter a Position : ";
+            cin>>position;
+
+            for(int i =0; i<position-1; i++){
+                temp = temp->next;
+                
+            } 
+        }
+    }
 
     return 0;
 }
 
 
-
-
+ 
 //Display
 
 int display(){
