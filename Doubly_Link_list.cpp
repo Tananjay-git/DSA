@@ -9,6 +9,7 @@ int display();
 int InsertAtBeginning();
 int InsertAtEnd();
 int InsertAtPosition();
+int DeleteAtBeginning();
 
 
 
@@ -27,7 +28,7 @@ struct node *head = NULL;
 int main(){
     int opt = 0;
     while(opt != 8){
-        cout<<" 1 : Display \n 2 : Insert at Beginning \n 3 : Insert at End \n 4 : Insert at Position \n 8 : Exit"<<endl;
+        cout<<" 1 : Show \n 2 : Insert at Beginning \n 3 : Insert at Ending \n 4 : Insert at Position \n 5 : Delete at Beginning  \n 6 : int Delete at End\n 7 : Delete at Position\n 8 : Exit "<<endl;
         cout<<"Enter your chooice : ";
         cin>> opt;
         
@@ -51,6 +52,11 @@ int main(){
             case 4:
             {
                 InsertAtPosition();
+                break;
+            }
+            case 5:
+            {
+                DeleteAtBeginning();
                 break;
             }
             case 8:
@@ -174,6 +180,27 @@ int InsertAtPosition(){
     return 0;
 }
 
+
+// Deletion 
+
+int DeleteAtBeginning(){
+    if(head == NULL){
+        cout<<"Empty List "<<endl;
+    }
+    else{
+        if(head->next == NULL){
+            head = NULL;
+        }
+        else{
+            struct node *temp = head;
+            head = temp->next;
+            head->previous = NULL;
+            free(temp);
+        }
+        cout<<"Element Deleted"<<endl;
+    }
+    return 0;
+}
 
  
 //Display
