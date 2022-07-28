@@ -10,6 +10,8 @@ int InsertAtBeginning();
 int InsertAtEnd();
 int InsertAtPosition();
 int DeleteAtBeginning();
+int DeleteAtEnd();
+int DeleteAtPosition();
 
 
 
@@ -57,6 +59,16 @@ int main(){
             case 5:
             {
                 DeleteAtBeginning();
+                break;
+            }
+            case 6:
+            {
+
+                break;
+            }
+            case 7:
+            {
+
                 break;
             }
             case 8:
