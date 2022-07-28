@@ -63,12 +63,12 @@ int main(){
             }
             case 6:
             {
-
+                DeleteAtEnd();
                 break;
             }
             case 7:
             {
-
+                DeleteAtPosition();
                 break;
             }
             case 8:
@@ -223,10 +223,54 @@ int DeleteAtEnd(){
             head = NULL;
         }
         else{
-            
-        }
-    }
+            struct node *temp = head;
 
+            while(temp->next != NULL){
+                temp = temp->next;
+            }
+            temp->previous->next = NULL;
+            free(temp);
+        }
+        cout<<"Element Deleted"<<endl;
+    }
+    return 0;
+}
+
+int DeleteAtPosition(){
+    if(head == NULL){
+        cout<<"Empty List "<<endl;
+    }
+    else{
+        if (head->next ==NULL)
+        {
+            head = NULL;
+            cout<<"Element Deleted "<<endl;
+        }
+        else{
+            struct node *temp=head;
+
+            int position, flag=1;
+            cout<<"Enter the Position :";
+            cin>>position;
+
+            for(int i=0 ; i<position ; i++){
+                temp = temp->next;
+                if(temp->next == NULL){
+                    flag = 0;
+                    break;
+                }
+            }
+
+            if(flag){
+                temp->previous->next = temp->next;
+                cout<<"Element Deleted "<<endl;
+            }
+            else{
+                cout<<"Number of element is less than position entered"<<endl;
+            }
+        }
+        
+    }
     return 0;
 }
 
