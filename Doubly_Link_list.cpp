@@ -214,6 +214,22 @@ int DeleteAtBeginning(){
     return 0;
 }
 
+int DeleteAtEnd(){
+    if(head == NULL){
+        cout<<"Empty List"<<endl;
+    }
+    else{
+        if(head->next == NULL){
+            head = NULL;
+        }
+        else{
+            
+        }
+    }
+
+    return 0;
+}
+
  
 //Display
 
