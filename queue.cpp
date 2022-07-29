@@ -89,3 +89,27 @@ int Insert(){
     return 0;
 }
 
+//Deleteion
+
+int Delete(){
+    if(head == NULL){
+        cout<<"Empty List"<<endl;
+    }
+    else{
+        if(head->next == NULL){
+            head = NULL;
+        }
+        else{
+            struct node *temp1=head, *temp2;
+            while(temp1->next != NULL){
+                temp2 = temp1;
+                temp1 = temp1->next;
+            }
+            temp2->next = NULL;
+            free(temp1);
+        }
+        cout<<"Element Deleted"<<endl;
+    }
+    return 0;
+}
+
