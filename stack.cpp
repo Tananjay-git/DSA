@@ -1,7 +1,5 @@
 // Stack Usimg Link list 
 // Stack work on the rule of LIFO (Last In First Out)
-
-
 #include<iostream>
 using namespace std;
 
