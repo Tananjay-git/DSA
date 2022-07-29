@@ -110,3 +110,19 @@ int Delete(){
     }
     return 0;
 }
+
+//Display
+
+int Display(){
+    if(head == NULL){
+        cout<<"Empty list"<<endl;
+    }
+    else{
+        struct node *temp = head;
+        while(temp != NULL){
+            cout<< temp->data <<endl;;
+            temp = temp->next;
+        }
+    }
+    return 0;
+}
