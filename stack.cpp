@@ -61,3 +61,52 @@ int main(){
     }
     return 0;
 }
+
+//Insertion 
+
+int Insert(){
+    struct node *newnode = new node;
+    
+    if (newnode == NULL)
+    {
+        cout<<"No Space"<<endl;
+    }
+    else{
+        int value;
+        cout<<"Enter a value : ";
+        cin>>value;
+
+        newnode->data = value;
+
+        if(head == NULL){
+            newnode->next = NULL;
+            head = newnode;
+        }
+        else{
+            newnode->next = head;
+            head = newnode;
+        }
+        cout<<"Element Inserted"<<endl;
+    }
+    return 0;
+}
+
+//Deletion
+
+int Delete(){
+    if(head == NULL){
+        cout<<"Empty List "<<endl;
+    }
+    else{
+        if(head->next == NULL){
+            head = NULL;
+        }
+        else{
+            struct node *temp = head;
+            head = temp->next;
+            free(temp);
+        }
+        cout<<"Element Deleted"<<endl;
+    }
+    return 0;
+}
