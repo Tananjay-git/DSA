@@ -10,7 +10,6 @@ int Display();
 int Insert();
 int Delete();
 
-
 // Node Structure
 
 struct node{
