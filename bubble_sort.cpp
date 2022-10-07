@@ -1,6 +1,7 @@
 // Bubble sorting linklist
 #include<iostream>
 using namespace std;
+int count =0;
 
 struct node
 {
@@ -10,6 +11,7 @@ struct node
 
 
 struct node *head = NULL;
+
 int insert(){
     struct node *new_node = new node;
 
@@ -30,6 +32,7 @@ int insert(){
             new_node->next = head;
             head = new_node;
         }
+        count++;
         cout<<"Element inserted"<<endl;
     }
     return 0;
@@ -42,9 +45,24 @@ void show(){
     else{
         struct node *p = head;
         cout<<"Element in List : ";
-        while(p->next != NULL){
+        while(p != NULL){
             cout<< p->data<< " ";
             p=p->next;
+        }
+    }
+}
+
+void sort(){
+    if(head == NULL){
+        cout<<"Empty List";
+    }
+    else{
+        if(head -> next == NULL){
+            cout<<"Only Element in the list : ";
+            cin>>head->data;
+        }
+        else{
+            struct node *first
         }
     }
 }
@@ -54,7 +72,7 @@ int main(){
     int opt = 0;
     while(opt != 3){
         cout<<"Enter Your Choice : "<<endl;
-        cout<<"1 : Insert \n2 : Show \n3 : Exit"<<endl;
+        cout<<"1 : Insert \n2 : Show \n3 : Sort \n4 : Exit"<<endl;
         cin>>opt;
 
         switch (opt)
@@ -68,6 +86,10 @@ int main(){
                 break;
             }
             case 3:{
+                sort();
+                break;
+            }
+            case 4:{
                 cout<<"Exit";
                 break;
             }
