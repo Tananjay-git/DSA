@@ -26,6 +26,24 @@ class linkedList{
         this.length++
         return this 
     }
+
+    pop(value){
+        if(!this.head) return undefined
+        else{
+            if(this.head == this.tail){
+                this.head = null
+                this.tail = null
+            }
+            else{
+                let temp = this.head
+                while(this.temp.next != this.tail){
+                    this.temp = this.temp.next
+                }
+                this.tail = this.temp;
+                this.tail.next = null
+            }
+        }
+    }
 }
 
 let myLinkedList = new linkedList(5);
