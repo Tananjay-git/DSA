@@ -5,6 +5,15 @@ class node{
     }
 }
 
+class show{
+    constructor(value){
+        const n = new linkedList 
+        switch(value){
+            case 1: 
+        }
+    }
+}
+
 class linkedList{
     constructor(value){
         const newNode = new node(value);
