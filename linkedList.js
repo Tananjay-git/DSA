@@ -5,14 +5,7 @@ class node{
     }
 }
 
-class show{
-    constructor(value){
-        const n = new linkedList 
-        switch(value){
-            case 1: 
-        }
-    }
-}
+
 
 class linkedList{
     constructor(value){
@@ -56,6 +49,20 @@ class linkedList{
 }
 
 let myLinkedList = new linkedList(5);
-myLinkedList.push(4)
+// myLinkedList.push(4)
+
+function show(){
+    // constructor(value){
+    //     const n = new linkedList 
+    //     switch(value){
+    //         case 1: 
+    //     }
+    // }/
+    let num = prompt("Please enter your name", "Harry Potter");
+    let myLinkedList = new linkedList(num);
+    if (num != null) {
+    document.getElementById("output").innerHTML = myLinkedList.value;
+  }
+}
 
 console.log(myLinkedList);
